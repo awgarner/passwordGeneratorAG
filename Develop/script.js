@@ -49,7 +49,18 @@ function getPasswordOptions() {
     'Click OK to include uppercase letters'
   )
 
-  
+    //  conditional to check if the user didn't choose to include any types of characters - if all are false the function ends
+
+  if (
+    hasSpecialCharacters === false &&
+    hasNumericCharacters === false &&
+    hasLowerCasedCharacters === false &&
+    hasUpperCasedCharacters === false
+  ) {
+    alert('You must select a minimum of one character type');
+    return null;
+  }
+
 
 
 
