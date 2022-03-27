@@ -1,3 +1,27 @@
+// function to ask user for types of characters in password (password options)
+function getPasswordOptions() {
+
+
+
+
+
+
+
+
+
+
+  
+  // end of getPasswordOptions function
+}
+
+
+
+
+
+
+
+
+
 // Function to generate password with user input
 function generatePassword() {
   var options = getPasswordOptions();
@@ -42,9 +66,11 @@ function generatePassword() {
     guaranteedCharacters.push(getRandom(upperCasedCharacters));
   }
 
+  // line 209 in Slavic's code... NEED MORE CODE HERE...
 
 
 
+// end of generate password function
 }
 
 
