@@ -61,16 +61,19 @@ function getPasswordOptions() {
     return null;
   }
 
+  // array object that will store the user's character selections - stores a boolean value from the confirm windows
 
+  var passwordOptions = {
+    length: length,
+    hasSpecialCharacters: hasSpecialCharacters,
+    hasNumericCharacters: hasNumericCharacters,
+    hasLowerCasedCharacters: hasLowerCasedCharacters,
+    hasUpperCasedCharacters: hasUpperCasedCharacters,
+  };
 
+  // returns the array with boolean password options to the function call getPasswordOptions()
 
-
-
-
-
-
-
-
+  return passwordOptions;
 
   // end of getPasswordOptions function
 }
