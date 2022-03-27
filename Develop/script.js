@@ -2,13 +2,25 @@
 function getPasswordOptions() {
   // variable to contain password length from user input
   var length = parseInt(
-    prompt('How many characters should your password contain?')
+    prompt('How many characters should your password contain?');
   )
 
   // conditional to check if length is a number
   if (Number.isNaN(length)) {
-    alert('Password length must be a number')
+    alert('Password length must be a number');
+    return null;
   }
+
+  // conditional to check if password length is at least 8 char long. Prompts end if false.
+
+  if (length < 8) {
+    alert('Your password must be at least 8 characters')l
+    return null;
+  }
+
+  // conditional to check if password length is < 128 characters. Prompts end if false.
+
+
 
 
 
