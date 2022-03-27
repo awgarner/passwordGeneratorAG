@@ -2,11 +2,11 @@
 function getPasswordOptions() {
   // variable to contain password length from user input
   var length = parseInt(
-    prompt('How many characters should your password contain?');
-  )
+    prompt('How many characters should your password contain?')
+  );
 
   // conditional to check if length is a number
-  if (Number.isNaN(length)) {
+  if (typeof(length) !== 'number') {
     alert('Password length must be a number');
     return null;
   }
@@ -14,7 +14,7 @@ function getPasswordOptions() {
   // conditional to check if password length is at least 8 char long. Prompts end if false.
 
   if (length < 8) {
-    alert('Your password must be at least 8 characters')l
+    alert('Your password must be at least 8 characters')
     return null;
   }
 
@@ -71,6 +71,7 @@ function getPasswordOptions() {
     hasUpperCasedCharacters: hasUpperCasedCharacters,
   };
 
+
   // returns the array with boolean password options to the function call getPasswordOptions()
 
   return passwordOptions;
@@ -81,6 +82,17 @@ function getPasswordOptions() {
 
 
 
+function getRandom(array){
+  // based on the array length, return a random char from the array
+
+  let randomIndex = Math.floor(Math.random() * array.length);
+
+  return array[randomIndex];
+
+}
+
+
+
 
 
 
@@ -88,6 +100,35 @@ function getPasswordOptions() {
 
 // Function to generate password with user input
 function generatePassword() {
+
+// arrays with characters
+
+    const specialCharacters = [
+      "!",
+      "@",
+      "#"
+    ]
+
+
+    const numericCharacters = [
+      "1",
+      "2",
+      "3"
+
+    ]
+    const upperCasedCharacters = [
+      "A",
+      "B"
+
+    ]
+    const lowerCasedCharacters = [
+      "a",
+      "b"
+
+    ]
+
+
+
   var options = getPasswordOptions();
   // variable to store password as it's being concatenated
   var result = [];
@@ -105,14 +146,12 @@ function generatePassword() {
   // push new random specialcharacter to guaranteedCharacters
   if (options.hasSpecialCharacters) {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
-    guaranteedCharacters.push(getRandom(specialCharacters));
   }
 
   // conditional statement that adds array of numeric characters into array of possible character based on user input
   // Push new random special character to guaranteedCharacters
   if (options.hasNumericCharacters) {
     possibleCharacters = possibleCharacters.concat(numericCharacters);
-    guaranteedCharacters.push(getRandom(numericCharacters));
 
   }
 
@@ -120,40 +159,31 @@ function generatePassword() {
   // Push new random lower-cased character to guaranteedCharacters
   if (options.hasLowerCasedCharacters) {
     possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
-    guaranteedCharacters.push(getRandom(lowerCasedCharacters));
   }
 
   // conditional statement that adds array of uppercase characters into array of possible characters based on user input
 
   if (options.hasUpperCasedCharacters) {
     possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
-    guaranteedCharacters.push(getRandom(upperCasedCharacters));
   }
 
   // line 209 in Slavic's code... NEED MORE CODE HERE...
 
 
 
+  // use the length of th e password to determine how many times getRandom will be called.
+  
+  // for loop that iterates over the length value that user chose - passing possibleCharacters as a parameter into the getRandom function returning a random character
+
+  for (let i = 0; i < options.length ; i++){
+
+    guaranteedCharacters.push(getRandom(possibleCharacters));
+
+  }
+
+return guaranteedCharacters.join('');
 // end of generate password function
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
