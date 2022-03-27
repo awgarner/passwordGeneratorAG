@@ -1,5 +1,14 @@
 // function to ask user for types of characters in password (password options)
 function getPasswordOptions() {
+  // variable to contain password length from user input
+  var length = parseInt(
+    prompt('How many characters should your password contain?')
+  )
+
+  // conditional to check if length is a number
+  if (Number.isNaN(length)) {
+    alert('Password length must be a number')
+  }
 
 
 
@@ -10,7 +19,6 @@ function getPasswordOptions() {
 
 
 
-  
   // end of getPasswordOptions function
 }
 
