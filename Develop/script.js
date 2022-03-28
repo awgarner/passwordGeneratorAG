@@ -243,11 +243,8 @@ function generatePassword() {
     possibleCharacters = possibleCharacters.concat(upperCasedCharacters);
   }
 
-  // line 209 in Slavic's code... NEED MORE CODE HERE...
-
-
-
-  // use the length of th e password to determine how many times getRandom will be called.
+  
+  // use the length of the password to determine how many times getRandom will be called.
   
   // for loop that iterates over the length value that user chose - passing possibleCharacters as a parameter into the getRandom function returning a random character
 
@@ -260,13 +257,6 @@ function generatePassword() {
 return guaranteedCharacters.join('');
 // end of generate password function
 }
-
-
-
-
-
-
-
 
 
 
@@ -286,16 +276,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-
-
-
-
-
-// // Function for getting a random element from an array - from SLAVIC
-
-// function getRandom(arr) {
-//   var randIndex = Math.floor(Math.random() * arr.length);
-//   var randElement = arr[randIndex];
-
-//   return randElement;}
